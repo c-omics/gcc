@@ -15,7 +15,7 @@ WORKDIR /gcc
 RUN curl -L ftp://ftp.mirrorservice.org/sites/sourceware.org/pub/gcc/releases/gcc-8.2.0/gcc-8.2.0.tar.gz | tar xzf - && \
     cd gcc-* && \
     ./configure --prefix=/usr/local/ --enable-languages=c,c++,fortran --disable-multilib && \
-    make -j && \
+    make -j 2 && \
     make install
 
 ENTRYPOINT ["/usr/local/bin/user_entrypoint.sh"]
